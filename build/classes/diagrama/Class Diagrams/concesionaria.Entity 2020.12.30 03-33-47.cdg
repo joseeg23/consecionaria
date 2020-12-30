@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="concesionaria.Entity">
+  <ClassDiagramComponents>
+    <Class name="Concesionario" package="concesionaria.Entity" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="vehiculos" type="ArrayList&lt;Vehiculo&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="ArrayList&lt;Vehiculo&gt;" name="vehiculos"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getVehiculos" returnType="ArrayList&lt;Vehiculo&gt;" visibility="public"/>
+        <Method name="setVehiculos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Vehiculo&gt;" name="vehiculos"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Vehiculo" package="concesionaria.Entity" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="precio" type="double" visibility="private"/>
+        <Field name="puertas" type="int" visibility="private"/>
+        <Field name="cilindrada" type="String" visibility="private"/>
+        <Field name="comparar" type="Comparator&lt;Vehiculo&gt;" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="double" name="precio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMarca" returnType="String" visibility="public"/>
+        <Method name="setMarca" returnType="void" visibility="public">
+          <Argument type="String" name="marca"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="getPrecio" returnType="double" visibility="public"/>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="double" name="precio"/>
+        </Method>
+        <Method name="getPuertas" returnType="int" visibility="public"/>
+        <Method name="setPuertas" returnType="void" visibility="public">
+          <Argument type="int" name="puertas"/>
+        </Method>
+        <Method name="getCilindrada" returnType="String" visibility="public"/>
+        <Method name="setCilindrada" returnType="void" visibility="public">
+          <Argument type="String" name="cilindrada"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="vehiculos" source="concesionaria.Entity.Concesionario" target="concesionaria.Entity.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Vehiculo&gt;"/>
+    <HasRelation name="comparar" source="concesionaria.Entity.Vehiculo" target="concesionaria.Entity.Vehiculo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="concesionaria.Entity.Concesionario" target="concesionaria.Entity.Vehiculo" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
